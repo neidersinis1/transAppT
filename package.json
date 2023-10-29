@@ -12,9 +12,11 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "tailwind-merge": "^1.12.0",
     "tailwindcss": "3.3.2",
-    "postcss": "8.4.23"
+    "postcss": "8.4.23",
+    "autoprefixer": "10.4.16"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -29,5 +31,22 @@
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "compilerOptions": {
+    "path": {
+      "@/*": ["./src/*"]
+    },
+    "target": "ESNext",
+    "lib": ["DOM"],
+    "allowJs": false,
+    "noEmitOnError": true,
+    "isolatedModules": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "NodeJS"
+
   }
+
 }
