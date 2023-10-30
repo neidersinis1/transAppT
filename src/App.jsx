@@ -1,10 +1,11 @@
 import './App.css'
 import Layout from './Layout/Layout'
+
 function App () {
   return (
     <>
       <Layout>
-        soy desde layout
+        soy componente app
       </Layout>
     </>
   )

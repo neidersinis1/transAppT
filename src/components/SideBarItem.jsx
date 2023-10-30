@@ -1,19 +1,9 @@
 /* eslint-disable react/prop-types */
-// import { IconType } from 'react-icons'
 import { twMerge } from 'tailwind-merge'
 
-// const Icono = IconType
-// interface SidebarItemProps {
-//   icon: IconType;
-//   label: string;
-//   active?: boolean;
-//   href: string;
-// }
-
-function SidebarItem ({ Icono: Icon, active, href }) {
+export default function SideBarItem () {
   return (
     <div
-      href={href}
       className={twMerge(`
         flex
         flex-row
@@ -27,15 +17,13 @@ function SidebarItem ({ Icono: Icon, active, href }) {
         hover:text-white
         transition
         text-neutral-400
-        py-1`,
-        active && "text-white"
+        py-1`
         )
       }
     >
-      <Icon size={26} />
-      <p className="truncate w-100">soyitem</p>
+      {/* <Icon size={26} /> */}
+      <p className="truncate w-100 text-white">soy item</p>
     </div>
    )
 }
 
-export default SidebarItem

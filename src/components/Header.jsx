@@ -2,8 +2,11 @@
 import { twMerge } from 'tailwind-merge'
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
 // import { FaUserAlt } from 'react-icons/fa'
-import { HiHome } from 'react-icons/hi'
-import { BiSearch } from 'react-icons/bi'
+import { HiMenu } from 'react-icons/hi'
+import { HiChevronDown } from 'react-icons/hi'
+// import { HiChevronUp } from 'react-icons/hi'
+
+// import { BiSearch } from 'react-icons/bi'
 
 export default function Header ({ children, className }) {
   return (
@@ -17,7 +20,7 @@ export default function Header ({ children, className }) {
       className
       )}
     >
-      <div className='w-full mb-4 flex items-center justify-between'>
+      <div className=' mb-4 flex items-center justify-between'>
         <div className='hidden md:flex gap-x-2 items-center'>
           <button
             onClick={() => {}}
@@ -50,7 +53,7 @@ export default function Header ({ children, className }) {
             <RxCaretRight className='text-white' size={35} />
           </button>
         </div>
-        <div className='flex md:hidden gap-x-2 items-center'>
+        <div className='flex w-full justify-between  md:hidden gap-x-2 items-center'>
           <button
             onClick={() => {}}
             className='
@@ -65,7 +68,7 @@ export default function Header ({ children, className }) {
               transition
             '
           >
-            <HiHome className='text-black' size={20} />
+            <HiMenu className='text-black' size={20} />
           </button>
           <button
             onClick={() => {}}
@@ -81,7 +84,7 @@ export default function Header ({ children, className }) {
               transition
             '
           >
-            <BiSearch className='text-black' size={20} />
+            <HiChevronDown className='text-black' size={20} />
           </button>
         </div>
       </div>
