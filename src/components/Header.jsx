@@ -1,21 +1,28 @@
 /* eslint-disable react/prop-types */
+import { useCallback } from 'react';
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge'
+import MobileMenu from './MobileMenu';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
-// import { FaUserAlt } from 'react-icons/fa'
 import { HiMenu } from 'react-icons/hi'
-import { HiChevronDown } from 'react-icons/hi'
-// import { HiChevronUp } from 'react-icons/hi'
+import { Link } from "react-router-dom";
+import Logo from './Logo'
 
-// import { BiSearch } from 'react-icons/bi'
 
 export default function Header ({ children, className }) {
+const [ShowMobileMenu, setShowMobileMenu] = useState(false)
+
+  const toggleMobileMenu = useCallback(() => {
+    setShowMobileMenu((current) => !current);
+  }, []);
+
   return (
     <div
       className={twMerge(`
         h-fit 
         bg-gradient-to-b 
         from-emerald-800 
-        p-6
+        p-2
         `,
       className
       )}
@@ -33,9 +40,10 @@ export default function Header ({ children, className }) {
               cursor-pointer
               hover:opacity-75
               transition
+              select-none
             '
           >
-            <RxCaretLeft className='text-white' size={35} />
+            <RxCaretLeft className='text-white select-none' size={35} />
           </button>
           <button
             onClick={() => {}}
@@ -48,14 +56,20 @@ export default function Header ({ children, className }) {
               cursor-pointer
               hover:opacity-75
               transition
+              select-nonev
             '
           >
-            <RxCaretRight className='text-white' size={35} />
+            <RxCaretRight className='text-white select-none' size={35} />
           </button>
         </div>
         <div className='flex w-full justify-between  md:hidden gap-x-2 items-center'>
+          <div className='-ml-5 select-none'>
+            <Link to={'/'}>
+              <Logo />
+            </Link>
+          </div>
           <button
-            onClick={() => {}}
+            onClick={toggleMobileMenu}
             className='
               rounded-full
               p-2
@@ -64,27 +78,12 @@ export default function Header ({ children, className }) {
               items-center
               justify-center
               cursor-pointer
-              hover:opacity-75
               transition
+              select-none
             '
           >
-            <HiMenu className='text-black' size={20} />
-          </button>
-          <button
-            onClick={() => {}}
-            className='
-              rounded-full
-              p-2
-              bg-white
-              flex
-              items-center
-              justify-center
-              cursor-pointer
-              hover:opacity-75
-              transition
-            '
-          >
-            <HiChevronDown className='text-black' size={20} />
+            <HiMenu className='text-black select-none' size={20} />
+            <MobileMenu visible={ShowMobileMenu} />
           </button>
         </div>
       </div>

@@ -1,29 +1,20 @@
 /* eslint-disable react/prop-types */
-// import useConversation from "@/app/hooks/useConversation";
-// import useRoutes from "@/app/hooks/useRoutes";
-// import MobileItem from "./MobileItem";
 import { HiHome } from 'react-icons/hi'
 import { HiChatAlt } from 'react-icons/hi'
-// import { BiSearch } from 'react-icons/bi'
-// import { FiMessageSquare, FiUserPlus, FiUsers } from 'react-icons/fi'
+import { HiUsers } from 'react-icons/hi'
+import { Link } from "react-router-dom";
 
 import { twMerge } from 'tailwind-merge'
 
-const MobileFooter = ({ className }) => {
-//   const routes = useRoutes();
-//   const { isOpen } = useConversation();
-
-//   if (isOpen) {
-//     return null;
-//   }
-
+export default function Footer ({ className }) {
 
   return ( 
     <div 
     className={twMerge(`
+      bg-black
       h-fit 
       bg-gradient-to-b
-    from-emerald-800 
+      from-emerald-800 
       p-6
       fixed 
       justify-between 
@@ -32,38 +23,44 @@ const MobileFooter = ({ className }) => {
       z-40 
       flex 
       items-center 
-      border-t-[1px] 
+      
       lg:hidden
     `,
      className
     )}
     >
         <div className='
+           
           flex 
           w-full  
-          md:hidden 
           gap-x-2 
           items-center
           justify-between'
         >
           <button
-            onClick={() => {}}
-            className='
-              rounded-full
-              p-2
-              flex
-              items-center
-              justify-center
-              cursor-pointer
-              hover:opacity-75
-              transition
-            '
+        onClick={() => {}}
+        className='
+          bg-white
+          rounded-full
+          p-2
+          flex
+          items-center
+          justify-center
+          cursor-pointer
+          hover:opacity-75
+          transition
+          select-none
+          '
           >
-            <HiHome className='text-black' size={20} />
+            <Link to={'users'}>
+              <HiUsers className='text-black select-none' size={20} />
+            </Link>
+            
           </button>
           <button
             onClick={() => {}}
             className='
+              bg-white
               rounded-full
               p-2
               flex
@@ -72,13 +69,35 @@ const MobileFooter = ({ className }) => {
               cursor-pointer
               hover:opacity-75
               transition
+              select-none
             '
           >
-            <HiChatAlt className='text-black' size={20} />
+            <Link to={'/'}>
+              <HiHome className='text-black select-none' size={20} />
+            </Link>
+            
+          </button>
+          <button
+            onClick={() => {}}
+            className='
+              bg-white
+              rounded-full
+              p-2
+              flex
+              items-center
+              justify-center
+              cursor-pointer
+              hover:opacity-75
+              transition
+              select-none
+            '
+          >
+            <Link to={'messages'}>
+              <HiChatAlt className='text-black select-none' size={20} />
+            </Link>
           </button>
         </div>
     </div>
    );
 }
  
-export default MobileFooter;

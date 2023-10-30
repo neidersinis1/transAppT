@@ -1,17 +1,14 @@
 /* eslint-disable react/prop-types */
 import Sidebar from '@/components/Sidebar'
-
+import { Outlet } from "react-router-dom";
 import '@/index.css'
-import Header from '@/components/Header'
-import MobileFooter from '@/components/Footer'
 
 export default  function Layout ({ children }) {
   return (
     <>
-      <Header />
       <Sidebar />
-      {children}
-      <MobileFooter />
+      {children}s
+      <Outlet />
     </>   
   )
 }
