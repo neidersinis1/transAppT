@@ -6,6 +6,7 @@ import LayoutRouter from './pages/LayoutRouter'
 import Users from './pages/Users'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Auth from './pages/Auth';
 
 function App () {
   return (
@@ -16,6 +17,7 @@ function App () {
           <Route path='/' element={<Layout />} />
           <Route path='messages' element={<Messages />} />
           <Route path='users' element={<Users />} />
+          <Route path='auth' element={<Auth />} />
         </Route>
       </Routes>
       <Footer />

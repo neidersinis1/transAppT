@@ -1,5 +1,13 @@
+import FormMessages from "@/components/FormMessages"
+import BodyMessages from "@/components/BodyMessages"
+
 export default function Messages () {
-    return (
-    <h1 className="text-white">Hola soy messages</h1>
-    )
+  return (
+    <>
+      <BodyMessages />
+      <div className="mt-80">
+        <FormMessages />
+      </div>
+    </>
+  )
 }
